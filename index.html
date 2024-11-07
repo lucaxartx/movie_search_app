@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <h1>Movie Search App</h1>
+        <a class="activeNav" href="index.html">Home</a>
+        <a class="activeNav" href="./auth/register.html">Register</a>
+        <a class="activeNav" href="./auth/login.html">Login</a>
+    </nav>
+
+    <!-- Search Container -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for a movie...">
+        <button id="searchButton">Search</button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Results Section -->
+    <div id="results"></div>
+
+    <!-- Latest Movies Section -->
+    <h2>Featured Today</h2>
+    <div id="latest-movies" class="movie-grid">
+        <!-- Latest movies will appear here -->
+    </div>
+
+    <!-- Movie Details Modal -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <img id="modalPoster" src="" alt="Movie Poster">
+            <p id="modalYear"></p>
+            <p id="modalPlot"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
