@@ -26,7 +26,11 @@ document
       const userCredential = await firebase
         .auth()
         .signInWithEmailAndPassword(email, password);
-      alert("login successful!");
+
+        const user = userCredential.user;
+
+        alert(`welcome ${user.displayName}`);
+        localStorage.setItem("logginName", user.displayName);
       window.location.href = "../index.html"; // Redirect to the homepage after registration
     } catch (error) {
       alert(`Error: ${error.message}`);

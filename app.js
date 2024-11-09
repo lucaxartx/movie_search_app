@@ -237,3 +237,44 @@ function hideProgressBar() {
   );
   progressBarContainer.style.display = "none";
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const navbar = document.getElementById("navbar");
+  const loggedInUser = localStorage.getItem("logginName");
+
+  if (loggedInUser) {
+    // Hide the navbar if the user is logged in
+    navbar.style.display = "none";
+
+    // Display a welcome message
+    const greetingElement = document.createElement("h2");
+    greetingElement.textContent = `Hello, ${loggedInUser}!`;
+    document.body.prepend(greetingElement);
+  
+
+    const logoutButton = document.createElement("button");
+    logoutButton.textContent = "Logout";
+    logoutButton.style.position = "absolute";
+    logoutButton.style.top = "20px";
+    logoutButton.style.right = "20px";
+    logoutButton.style.padding = "10px";
+    logoutButton.style.backgroundColor = "#6200ea";
+    logoutButton.style.color = "#fff";
+    logoutButton.style.border = "none";
+    logoutButton.style.borderRadius = "5px";
+    logoutButton.style.cursor = "pointer";
+  
+    // Append the logout button to the body
+    document.body.appendChild(logoutButton);
+  
+    // Add event listener for the logout button
+    logoutButton.addEventListener("click", function () {
+      localStorage.removeItem("logginName");
+      alert("You have been logged out.");
+      window.location.href = "./auth/login.html"; // Redirect to login page
+    });
+  }
+
+
+});

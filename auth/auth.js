@@ -81,7 +81,8 @@ registerForm.addEventListener("submit", (e) => {
     .then((userCredential) => {
       // Successfully registered
       const user = userCredential.user;
-      alert("Registration successful!");
+     
+      alert("Registration successful!",  user);
       console.log("User registered:", user);
 
       // Redirect to index.html after registration

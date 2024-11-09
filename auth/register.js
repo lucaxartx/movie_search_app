@@ -18,14 +18,24 @@ document
 
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
+    const username = document.getElementById("username").value.trim();
 
     console.log("Email:", email);
     console.log("Password:", password);
+    console.log("username", username)
 
     try {
       const userCredential = await firebase
         .auth()
-        .createUserWithEmailAndPassword(email, password);
+        .createUserWithEmailAndPassword( email, password);
+
+        const user = userCredential.user;
+
+       
+        await user.updateProfile({
+          displayName: username,
+        });
+
       alert("Registration successful!");
       window.location.href = "../index.html"; // Redirect to the homepage after registration
     } catch (error) {
